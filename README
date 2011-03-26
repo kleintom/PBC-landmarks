@@ -1,0 +1,16 @@
+Files for the landmarks of Pheasant Branch Conservancy page at the
+Friends of Pheasant Branch Conservancy website.
+
+http://www.pheasantbranch.org/Interactive%20Map/locations.html
+
+Files:
+
+locations.html (note that this file doesn't include any of the markup
+                specific to the FOPB webpages (such as the header,
+                footer, and menu), nor does it include the FOPB css,
+                so it won't look right when viewed on its own)
+locations.js
+locations.css (css specific to the markup in locations.html)
+
+locations.js is released under a GPL license, the text of which is
+available in the LICENSE file.

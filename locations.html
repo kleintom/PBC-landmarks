@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pheasant Branch Conservancy landmarks</title>
+<link rel="stylesheet" type="text/css" href="locations.css" media="all" />
+<!--<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAD6RtE6FR89lCkKtFK9aRnRQCXGGgMHAXVGfAXN0vFgw6mLsGrhS5M0Ne2d6qfl1gh-yQ9Xf3w_Y0hg"-->
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAD6RtE6FR89lCkKtFK9aRnRQCXGGgMHAXVGfAXN0vFgw6mLsGrhS5M0Ne2d6qfl1gh-yQ9Xf3w_Y0hg"
+        type="text/javascript"></script>
+<script type="text/javascript" src="locations.js"></script>
+</head>
+
+<body onload="fopb.initialize()" onunload="GUnload()">
+
+  <div id="error"><noscript><p>Sorry, this site requires scripting (javascript) to be enabled - the content below is incomplete.</p></noscript></div>
+
+  <div class="landmarks_title">Pheasant Branch Conservancy landmarks</div>
+  <div class="info_title">All parking is free.  The conservancy is open from 7 AM to 10 PM.</div>
+  <!--map-->
+  <br />
+  View this map with parking markers in <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;msa=0&amp;msid=109419713967081798604.0004850741c96e4a10e20&amp;ll=43.115489,-89.484458&amp;spn=0.028602,0.052142&amp;z=15">Google Maps</a>.
+  <br />
+  <span id="recenter">Recenter and rezoom this map.</span>
+  <div id="map_canvas"><!--the map - data added dynamically--></div>
+  <!--additional info?-->
+  <div id="additional_info"><!--indicator string for extra info below - data added dynamically--></div>
+  <!--parking-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_parking" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_grey.png" alt="grey marker"/>
+  <span class="check_title">Parking</span>
+  </span>
+  <!--platforms-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_platforms" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_green.png" alt="green marker"/>
+  <span class="check_title">Platforms</span>
+  </span>
+  <!--indian mounds-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_indian_mounds" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_purple.png" alt="purple marker"/>
+  <span class="check_title">Indian mounds</span>
+  </span>
+  <!--benches-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_benches" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_brown.png" alt="brown marker"/>
+  <span class="check_title">Benches</span>
+  </span>
+  <!--information kiosks-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_info_kiosks" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_white.png" alt="white marker"/>
+  <span class="check_title">Information kiosks</span>
+  </span>
+  <!--bike racks-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_bike_racks" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker_orange.png" alt="orange marker"/>
+  <span class="check_title">Bike racks</span>
+  </span>
+  <!--restrooms-->
+  <span class="marker_line">
+  <input class="location_checkbox" id="check_all_restrooms" type="checkbox"/>
+  <img class="marker_icon" src="http://www.google.com/intl/en_ALL/mapfiles/marker.png" alt="red marker"/>
+  <span class="check_title">Restrooms</span>
+  </span>
+  <!--map marker legend (for markers currently on the map)-->
+  <div id="parking_extra_info"><!--Data added dynamically--></div>
+  <div id="platforms_extra_info"><!--Data added dynamically--></div>
+
+</body>
+</html>

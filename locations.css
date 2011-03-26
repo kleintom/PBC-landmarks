@@ -1,0 +1,78 @@
+#map_canvas {
+    /*margin-left: auto;
+    margin-right: auto;*/
+    margin-top: 5px;
+    width: 530px;
+    height: 800px;
+}
+
+img.marker_icon {
+    height: 20px;
+    vertical-align: text-bottom;
+    margin-bottom: 5px;
+}
+
+.marker_line {
+    float: left;
+    margin-right: 8px;
+}
+
+.marker_detail {
+    /* hanging indent */
+    text-indent: -30px;
+    margin-left: 30px;
+}
+
+#additional_info {
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+#parking_extra_info, platforms_extra_info {
+    clear: both;
+    margin-top: 15px;
+}
+
+.landmarks_title {
+    color: #87a448;
+    font-size: 2em;
+    font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+    border-bottom: 1px dotted #CCCCCC;
+    padding-bottom: 6px;
+    padding-left: 45px;
+    margin-bottom: 10px;
+}
+
+.info_title {
+    margin-left: 5px;
+    margin-right: 7px;
+    font-size: 1.6em;
+    font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: #557C2B;
+}
+
+.check_title {
+    font-size: 1.6em;
+    font-style: italic;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: #83A956;
+}
+
+.location_checkbox {
+    margin-right: 2px;
+}
+
+#recenter {
+    cursor: pointer;
+    color: #557C2B;
+    text-decoration: none;
+}
+
+#error {
+    font-size: 2em;
+    margin: 15px;
+}
