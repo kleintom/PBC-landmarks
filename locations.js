@@ -1,4 +1,4 @@
-/* 
+/*
    @source: https://github.com/kleintom/PBC-landmarks
    @licstart  The following is the entire license notice for the JavaScript
    code in this page.
@@ -38,7 +38,7 @@ fopb.initialize = function() {
                        { mapTypeId: gm.MapTypeId.ROADMAP, scrollwheel: false });
   gkml = new gm.KmlLayer("http://maps.google.com/maps/ms?hl=en&ie=UTF8&t=h&vps=1&jsv=233a&msa=0&output=nl&msid=109419713967081798604.000484df47d724e63a3fb");
   gkml.setMap(fopb.map);
-  
+
   //// create the markers
   // parking
   parking_doc = "";
@@ -47,67 +47,68 @@ fopb.initialize = function() {
     fopb.create_and_add_marker(m, false);
     // maybe add a line going to this parking area
     if (m.line_data) {
-      m.line_object = new gm.Polyline({ path: m.line_data, strokeColor: "#EDE186",
+      m.line_object = new gm.Polyline({ path: m.line_data,
+                                        strokeColor: "#EDE186",
                                         strokeWeight: 5, zIndex: 1});
       m.line_object.setMap(fopb.map);
     }
     // the description for this marker
     parking_doc += '<div class="marker_detail">';
-    parking_doc += 
-    '<img class="marker_icon" src="' + m.image + '" />';
-    parking_doc += 
-    '<span class="info_title">' + m.title + '</span>';
+    parking_doc +=
+      '<img src="' + m.image + '" />';
+    parking_doc +=
+      '<span class="info_title">' + m.title + '</span>';
     parking_doc +=  m.info;
     parking_doc += '</div>';
   }
   fopb.create_checker_function("check_all_parking", "check_all_parking",
 			       fopb.parking_markers, "parking_extra_info",
 			       parking_doc);
-  
+
   // platforms
   platforms_doc = "";
   for (i = 0; i < fopb.platform_markers.length; ++i) {
     m = fopb.platform_markers[i];
     fopb.create_and_add_marker(m, true);
     platforms_doc +=
-    '<img class="marker_icon" src="' + m.image + '" />';
-    platforms_doc += 
-    '<span class="info_title">' + m.title + '</span><br />';
+      '<img src="' + m.image + '" />';
+    platforms_doc +=
+      '<span class="info_title">' + m.title + '</span><br />';
   }
   fopb.create_checker_function("check_all_platforms",
 			       "check_all_platforms",
 			       fopb.platform_markers,
 			       "platforms_extra_info", platforms_doc);
-  
+
   // indian mounds
   fopb.create_markers(fopb.indian_mound_markers);
   fopb.create_checker_function("check_all_indian_mounds",
 			       "check_all_indian_mounds",
 			       fopb.indian_mound_markers);
-  
+
   // bike racks
   fopb.create_markers(fopb.bike_rack_markers);
   fopb.create_checker_function("check_all_bike_racks",
 			       "check_all_bike_racks",
 			       fopb.bike_rack_markers);
-  
+
   // information signs
   fopb.create_markers(fopb.info_sign_markers);
   fopb.create_checker_function("check_all_info_signs",
 			       "check_all_info_signs",
 			       fopb.info_sign_markers);
-  
+
   // benches
   fopb.create_markers(fopb.bench_markers);
   fopb.create_checker_function("check_all_benches", "check_all_benches",
 			       fopb.bench_markers);
-  
+
   // restrooms
   fopb.create_markers(fopb.restroom_markers);
   fopb.create_checker_function("check_all_restrooms",
 			       "check_all_restrooms",
 			       fopb.restroom_markers);
-  
+
   // on a load, only parking is checked
   fopb.display_parking_only();
 };
@@ -125,11 +126,12 @@ fopb.display_parking_only = function() {
     document.getElementById("check_all_restrooms").checked = false;
 };
 
-// <hide> if the marker should be initially hidden
+// the marker will be initially hidden if |hide| = true
 fopb.create_and_add_marker = function(marker_data, hide) {
 
   var options, new_marker;
-  options = { position: marker_data.coords, icon: { url: marker_data.image},
+  options = { position: marker_data.coords,
+              icon: { url: marker_data.image},
               map: fopb.map };
   if (hide) {
     options.visible = false;
@@ -145,7 +147,7 @@ fopb.create_and_add_marker = function(marker_data, hide) {
   }
 };
 
-// hide all of the created markers
+// hides all of the created markers
 fopb.create_markers = function(marker_data) {
 
     var i;
@@ -154,10 +156,10 @@ fopb.create_markers = function(marker_data) {
     }
 };
 
-// create a function named fopb.<name_of_function> that checks the checkbox
-// <id_to_check> for whether or not to display <markers>, and displays
-// <marker_detail> (if it exists) in the <marker_detail_id> div when
-// <id_to_check> is checked.
+// create a function fopb[|name_of_function|] that checks the checkbox
+// |id_to_check| for whether or not to display |markers|, and displays
+// |marker_detail| (if it exists) in the |marker_detail_id| div when
+// |id_to_check| is checked.
 fopb.create_checker_function = function(name_of_function, id_to_check, markers,
 					marker_detail_id, marker_detail) {
 
@@ -209,7 +211,7 @@ fopb.show_or_hide_all_markers = function(markers, show) {
 // generate the "more info below" string based on which of the checkboxes
 // that display extra information are checked
 fopb.update_extra_info_string = function() {
-    
+
     var extra_info_strings, i, item, extra_info, separator;
     extra_info_strings = [];
     for (i = 0; i < fopb.more_info_markers.length; ++i) {
@@ -248,7 +250,7 @@ fopb.recenter = function() {
 
 // Broken if marker_list.length > 26
 fopb.add_marker_images = function(marker_list, color) {
-  
+
   var char_code = 65; // A
   for (i = 0; i < marker_list.length; ++i) {
     var this_marker = marker_list[i];
@@ -256,7 +258,6 @@ fopb.add_marker_images = function(marker_list, color) {
     this_marker.image = "http://www.google.com/intl/en_ALL/mapfiles/marker_" +
       color + this_letter + ".png";
     ++char_code;
-    
   }
 };
 
@@ -376,7 +377,7 @@ fopb.bike_rack_markers = [
 	coords : new gm.LatLng(43.120598,-89.48166),
 	image : "http://www.google.com/intl/en_ALL/mapfiles/marker_orangeC.png"
     }
-];    
+];
 
 fopb.info_sign_markers = [
     {
@@ -421,8 +422,6 @@ fopb.info_sign_markers = [
     }
 ];
 
-// TODO the next time a bench gets added, create all of the image values
-// programatically from an ordered list of data without images assigned
 fopb.bench_markers = [
     {
 	id : "guerdons_hill",
